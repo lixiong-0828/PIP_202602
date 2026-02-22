@@ -13,7 +13,6 @@ com\ibm\filter\AAAJwtFilter.class
 com\ibm\service\EmpLogService.class
 com\ibm\controller\UploadController.class
 com\ibm\interceptor\TokenInterceptor.class
-com\ibm\controller\DeptController_BAK.class
 com\ibm\dao\imp\DeptDaoImp.class
 com\ibm\dao\DeptDao.class
 com\ibm\mapper\DeptMapper.class
