@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ibm.mapper.EmpMapper">
+
+<!--    动态SQL-->
+    <select id="getPageList" resultType="com.ibm.pojo.Emp">
+        select emp.* ,dept.name deptName from emp left join dept on emp.dept_id = dept.id
+<!--        【where】标签的作用：①自动控制【and】 ②自动控制【where】，比如没有条件，删除where-->
+            <where>
+                <if test="name != null and name != '' ">
+                    emp.name like concat('%',#{name},'%')
+                </if>
+
+                <if test="gender != null">
+                    and emp.gender = #{gender}
+                </if>
+                <if test="begin != null and end != null">
+                    and emp.entry_date between #{begin} and #{end}
+                </if>
+
+                <if test="loginJob != 1 and dept_id != null">
+                    and emp.dept_id = #{dept_id}
+                </if>
+
+                <if test="loginJob == 1 and country_type != null ">
+                    and dept.country_type = #{country_type}
+                </if>
+
+
+            </where>
+
+                  order by emp.update_time desc
+
+    </select>
+
+
+<!--    <update id="updateEmp">-->
+<!--        update emp-->
+<!--            set-->
+<!--                username = #{username}-->
+<!--        where id = #{id}-->
+<!--    </update>-->
+</mapper>

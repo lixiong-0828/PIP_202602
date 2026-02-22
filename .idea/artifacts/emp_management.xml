@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="emp:management">
+    <output-path>$PROJECT_DIR$/out/artifacts/emp_management</output-path>
+    <root id="archive" name="emp_management.war" />
+  </artifact>
+</component>

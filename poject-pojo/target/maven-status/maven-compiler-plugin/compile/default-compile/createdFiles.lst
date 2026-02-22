@@ -1,0 +1,8 @@
+com\ibm\pojo\PageBean.class
+com\ibm\pojo\EmpQueryParam.class
+com\ibm\pojo\EmpLog.class
+com\ibm\pojo\LogInfo.class
+com\ibm\pojo\Result.class
+com\ibm\pojo\Emp.class
+com\ibm\pojo\dept.class
+com\ibm\pojo\EmpExpr.class

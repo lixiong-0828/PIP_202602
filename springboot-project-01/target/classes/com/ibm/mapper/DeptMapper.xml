@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ibm.mapper.DeptMapper">
+
+<!--    <select id="findAll" resultType="com.ibm.pojo.dept">-->
+<!--        select id, name, create_time, update_time  from dept-->
+<!--    </select>-->
+
+<!--    动态SQL-->
+    <update id="updateName">
+        update dept
+<!--        SET作用：-->
+<!--        1，生成SET语句-->
+<!--        2，生成语句后，把多余的逗号去掉-->
+        <set>
+        <if test="name != null and name != '' " >
+            name = #{name},
+        </if>
+        <if test="countryType != null and  countryType != 0" >
+            country_type = #{countryType},
+        </if>
+        <if test="updateTime != null">
+            update_time = #{updateTime}
+
+        </if>
+        </set>
+        where id = #{id}
+    </update>
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ibm.mapper.EmpExprMapper">
+
+<!--    【foreach】标签：-->
+<!--    ① collection：遍历的集合；-->
+<!--    ② item：遍历出来的元素；-->
+<!--    ③ open：循环开始前，拼接SQL片段；-->
+<!--    ④ close：循环结束后，拼接SQL的片段；-->
+<!--    ⑤ seprator：每次循环之间的分隔符；-->
+    <insert id="addExpr">
+        insert into emp_expr (emp_id,begin,end,company, job) values
+            <foreach collection="empExprList" item="expr" separator=",">
+                (#{expr.empId},#{expr.begin},#{expr.end},#{expr.company},#{expr.job})
+            </foreach>
+    </insert>
+</mapper>

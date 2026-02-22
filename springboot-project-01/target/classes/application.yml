@@ -1,0 +1,43 @@
+spring:
+
+  application:
+    name: springboot-project-01
+#  数据库链接四要素
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lixiong01
+    username: root
+    password: zaq1@WSXcde3
+#  【service】里套用【service】模式是否可以？
+  main:
+    allow-circular-references: true
+
+#  可上传的单个文件大小，和单次请求可上传的大小
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: false
+    formcontent:
+      filter:
+        enabled: false
+#log
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#    驼峰命名的认可：可以跟数据库字段自动链接
+    map-underscore-to-camel-case: true
+
+#事物的信息设为【debug】，全部打出来
+logging.level.org.springframework.jdbc.support.JdbcTransactionManager : debug
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucketName: lixiong-20250721-001
+
+
