@@ -41,7 +41,7 @@ public interface EmpMapper {
     @Select("select * from emp_expr where emp_id = ${id}")
     List<EmpExpr> getEmpExprById(Integer id);
 
-    @Update("update emp set username = #{username}  , name=#{name} ,gender = #{gender} ,phone = #{phone} ,job = #{job} ,salary=#{salary} ,dept_id = #{deptId} ,entry_date=#{entryDate} ,image=#{image} where id=#{id} ")
+    @Update("update emp set username = #{username}  , name=#{name} ,gender = #{gender} ,phone = #{phone} ,job = #{job} ,salary=#{salary} ,dept_id = #{deptId} ,entry_date=#{entryDate} ,update_time=#{updateTime} , image=#{image} where id=#{id} ")
     void updateEmp(Emp emp);
 
     @Delete("delete from emp where id = #{id} ")

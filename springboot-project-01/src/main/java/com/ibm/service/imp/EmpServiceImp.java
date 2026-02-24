@@ -181,6 +181,7 @@ public class EmpServiceImp implements EmpService {
 
         try{
             log.info("=================   updateEmp service : {}",emp);
+            emp.setUpdateTime(LocalDateTime.now());
             empMapper.updateEmp(emp);
             empExprMapper.deleteExpr(emp.getId());
 
